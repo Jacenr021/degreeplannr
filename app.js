@@ -1277,6 +1277,50 @@ for (let lacCourse of lacCourses)
       </div>`;
 }
 
+let csReqs = document.getElementById("cs-reqs");
+
+for (let csCourse of csisCourses) 
+{
+    console.log(csCourse);
+    csReqs.innerHTML += 
+        `<div class="card my-2">
+        <div class="card-body">
+          <div class="row">
+            <h5 class="card-title col">
+              <b>${csCourse["Course Name"]}</b>
+            </h5>
+            <p class="col-3 text-end">${csCourse["Credit Hours"]} hours</p>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <p class="card-subtitle"> ${csCourse["Course ID"]}</p>
+            </div>
+            <div class="col-4 text-end">
+              <span class="text-muted">${csCourse["Semester Offered"]}</span>
+            </div>
+          </div>
+          <a
+            href="#${convertID(csCourse["Course ID"])}"
+            class="card-link fw-light"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            >Course description ›</a
+          >
+          <div
+            class="course-description collapse card-text"
+            id="${convertID(csCourse["Course ID"])}"
+          >
+            <p class="text-muted card-text">
+            ${csCourse["Course Description"]}
+            </p>
+            
+          </div>
+        </div>
+      </div>`;
+}
+
 function convertID(courseID) {
     return courseID.replace(" ", "")
             .replace("/","-")

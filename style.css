@@ -25,5 +25,18 @@ body {
 }
 
 .required-classes .card {
-    border-left: 8px solid #0c63e4;
+    border-left: 8px solid maroon;
 }
+
+.dashboard {
+  padding-top: 65px;
+}
+
+.text-muted {
+  padding-top: 65px;
+}
+
+/* a.coffee {
+  position: relative;
+  top: -250px;
+} */
